@@ -8,32 +8,32 @@ namespace Collections1
         static void Main(string[] args)
         {
 
-            Dictionary<string, string> collection = new Dictionary<string, string>();
-            collection.Add("Вася", "Vasya");
-            collection.Add("Коля", "Kolya");
-            collection.Add("Дима", "Dima");
-            collection.Add("Витя", "Vitya");
-            collection.Add("Аня", "Anya");
-            collection.Add("Таня", "Tanya");
+            Dictionary<string, string> libraryOfNames = new Dictionary<string, string>();
+            libraryOfNames.Add("Вася", "Vasya");
+            libraryOfNames.Add("Коля", "Kolya");
+            libraryOfNames.Add("Дима", "Dima");
+            libraryOfNames.Add("Витя", "Vitya");
+            libraryOfNames.Add("Аня", "Anya");
+            libraryOfNames.Add("Таня", "Tanya");
 
-            bool сontinue = true;
+            bool isContinueCycle = true;
 
-            while (сontinue)
+            while (isContinueCycle)
             {
                 Console.Clear();
 
-                foreach (var str in collection)
+                foreach (var nameRu in libraryOfNames)
                 {
-                    Console.WriteLine(" "+str.Key);
+                    Console.WriteLine(" "+nameRu.Key);
                 }
 
                 Console.Write("Введите имя - ");
 
                 string collectionKey = Console.ReadLine();
 
-                if (collection.ContainsKey(collectionKey))
+                if (libraryOfNames.ContainsKey(collectionKey))
                 {
-                    Console.Write("Транслит - " + collection[collectionKey]);
+                    Console.Write("Транслит - " + libraryOfNames[collectionKey]);
                 }
                 else
                 {
@@ -44,7 +44,7 @@ namespace Collections1
 
                 if (key.Key == ConsoleKey.Escape)
                 {
-                    сontinue = false;
+                    isContinueCycle = false;
                 }
             }
         }
